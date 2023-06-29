@@ -26,14 +26,14 @@ prime 변수 는 값이 1 인 Integer 객체에 대한 강한 참조를가진다
 이 객체를 가리키는 강한 참조가 있는 객체는 GC대상이 되지않는다.
 
 2. 부드러운 참조 (Soft Reference)
-– SoftReference<Integer> soft = new SoftReference<Integer>(prime);   
-와 같이 SoftReference Class를 이용하여 생성이 가능하다.  
+- SoftReference<Integer> soft = new SoftReference<Integer>(prime);    
+와 같이 SoftReference Class를 이용하여 생성이 가능하다.   
 만약 prime == null 상태가 되어 더이상 원본(최초 생성 시점에 이용 대상이 되었던 Strong Reference) 은 없고 대상을 참조하는 객체가 SoftReference만 존재할 경우 GC대상으로 들어가도록 JVM은 동작한다.   
 다만 WeakReference 와의 차이점은 메모리가 부족하지 않으면 굳이 GC하지 않는 점이다.  
 때문에 조금은 엄격하지 않은 Cache Library들에서 널리 사용되는 것으로 알려져있다.
 
 3. 약한 참조(Weak Reference)
-– WeakReference<Integer> soft = new WeakReference<Integer>(prime);   
+- WeakReference<Integer> soft = new WeakReference<Integer>(prime);   
 와 같이 WeakReference Class를 이용하여 생성이 가능하다.  
 prime == null 되면 (해당 객체를 가리키는 참조가 WeakReference 뿐일 경우) GC 대상이 된다.  
 앞서 이야기 한 내용과 같이 SoftReference와 차이점은 메모리가 부족하지 않더라도 GC 대상이 된다는 것이다.    
