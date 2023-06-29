@@ -17,6 +17,25 @@ item 06. 불필요한 객체 생성을 피하라
 - Database Connection
 - I/O 작업을 필요로 하는 Object
 - Pattern
+
+
+```java
+static boolean isRomanNumeral(String s){
+	return s.matches("^(?=.)M*(C[MD]|d?C{0,3})" + "(X[CL]|L?X{0,3})(I[XV]|V?I{0,3})$");
+}
+```
+String.matehes는 성능이 중요한 상황에서 반복적으로 사용하기에 적합하지x
+
+```java
+public class RomanNumerals {
+	private static final Pattern ROMAN = Pattern.compile("^(?=.)M*(C[MD]|d?C{0,3})" + "(X[CL]|L?X{0,3})(I[XV]|V?I{0,3})$");
+	
+static boolean isRomanNumeral(String s){
+		return ROMAN.matcher(s).matches();
+	}
+}
+```
+
 > 클래스 초기화 과정에서 인스턴스를 직접 생성해 캐싱해두고, 나중에 메서드가 호출할때 이 인스턴스를 재사용   
 > 빈번하게 호출되는 상황에서 성능 개선 뿐만 아니라 코드도 명확해짐
 
