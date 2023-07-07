@@ -131,6 +131,7 @@ static Comparator<Student> HASHCODE_COMPARATOR = new Comparator<Student>() {
 ```
 
 #### 비교자 생성 메서드 활용
+```java
 static  Comparator<Student> HASHCODE_COMPARATOR = Comparator.comparingInt(
             s -> s.hashCode());
 ```
