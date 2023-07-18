@@ -34,6 +34,7 @@ interface Inter3 extends Inter1 {
 	}
 }
 ```
+<br>
 
 ### 예시 2, 예시 1의 인터페이스를 구현한 클래스
 ```java
@@ -68,6 +69,7 @@ class Ex4 implements Inter3 {
     ~~~
 }
 ```
+<br>
 
 ### default 인터페이스를 사용할 때 주의 사항
 - 명시적인 호출
