@@ -54,29 +54,133 @@ public interface SingerSongWriter extends Singer, SongWriter {
 
 아래의 코드는 완벽히 동작하는 List 구현체를 반환하는 정적 팩터리 메서드로, AbstractList 골격 구현으로 활용했다
 ```java
-static List<Integer> intArrayAsList(int[] a) {
-  Object.requireNonNull(a);
 
-  return new AbstractList<>() {
-    @Override
-    public Integer get(int i) {
-      return a[i];
+public interface Athlete { 
+    
+    void 근육을_키우자(); 
+    void 지구력을_기르자(); 
+    void 연습하자(); 
+    void 루틴();
+}
+
+public class SoccerPlayer implements Athlete { 
+    
+    @Override 
+    void 근육을_키우자() { 
+        System.out.println("헬스장 레츠고"); 
+    }
+
+    @Override 
+    void 지구력을_기르자() { 
+        System.out.println("청계천 러닝"); 
+    }
+
+    @Override 
+    void 연습하자() { 
+        System.out.println("슈팅 연습"); 
     }
 
     @Override
-    public Integer set(int i, Integer val) {
-      int oldVal = a[i];
-      a[i] = val;
-      return oldVal;
+    void 루틴() {
+        근육을_키우자();
+        지구력을_기르자();
+        연습하자();
+    }
+
+}
+
+public class BaseballPlayer implements Athlete {
+    
+    @Override
+    void 근육을_키우자() {
+        System.out.println("헬스장 레츠고");
     }
 
     @Override
-    public int size() {
-      return a.length;
+    void 지구력을_기르자() {
+        System.out.println("청계천 러닝");
     }
+
+    @Override
+    void 연습하자() {
+        System.out.println("배팅 연습");
+    }
+
+    @Override
+    void 루틴() {
+        근육을_키우자();
+        지구력을_기르자();
+        연습하자();
+    }
+}
+```
+
+```java
+
+public interface Athlete {
+
+    void 근육을_키우자();
+
+    void 지구력을_기르자();
+
+    void 연습하자();
+
+    void 루틴();
+}
+
+public abstract class WangsimniAthlete implements Athlete {
+    
+    @Override
+    public void 근육을_키우자() {
+        System.out.println("헬스장 레츠고");
+    }
+
+    @Override
+    public void 지구력을_기르자() {
+        System.out.println("청계천 러닝");
+    }
+
+    @Override
+    public void 루틴() {
+        근육을_키우자();
+        지구력을_기르자();
+        연습하자();
+    }
+}
+
+public class SoccerPlayer extends WangsimniAthlete implements Athlete {
+
+    @Override
+    public void 연습하자() {
+        System.out.println("슈팅 연습");
+    }
+}
+
+public class BaseballPlayer extends WangsimniAthlete implements Athlete {
+
+    @Override
+    public void 연습하자() {
+        System.out.println("배팅 연습");
+    }
+}
+
+public class Main {
+    
+  public static void main(String[] args) {
+
+      List<Athlete> athletes = new ArrayList<>();
+      Athlete soccerPlayer = new SoccerPlayer();
+      Athlete baseballPlayer = new BaseballPlayer();
+      athletes.add(soccerPlayer);
+      athletes.add(baseballPlayer);
+  
+      for (Athlete athlete : athletes) {
+        athlete.루틴();
+      }
   }
 }
 ```
+
 List 구현체가 제공하는 기능들을 생각하면 이 코드는 골격 구현의 힘을 잘 보여주는 예이다.
 
 
