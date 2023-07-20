@@ -52,7 +52,7 @@ public interface SingerSongWriter extends Singer, SongWriter {
   - 관례상 인터페이스명 앞에 Abstract를 붙여 골격 구현 클래스의 이름을 짓는다
   - ex) Collection 프레임워크의 골격 구현 클래스의 이름은 각각 AbstractCollection, AbstractSet, AbstractList ...
 
-아래의 코드는 완벽히 동작하는 List 구현체를 반환하는 정적 팩터리 메서드로, AbstractList 골격 구현으로 활용했다
+아래의 코드는 AbstractList 골격 구현 클래스를 활용할 때의 장점을 보여주는 예시이다.
 ```java
 
 public interface Athlete { 
@@ -180,8 +180,7 @@ public class Main {
   }
 }
 ```
-
-List 구현체가 제공하는 기능들을 생각하면 이 코드는 골격 구현의 힘을 잘 보여주는 예이다.
+이 코드는 골격 구현의 힘을 잘 보여주는 예이다.
 
 
 ```
