@@ -22,7 +22,7 @@ objectArray[0] = "어떤 타입이든 저장할 수 있는데.........."; // Arr
 
 - 제네릭
     - 불공변(invariant)
-    - 서로 다른 타입 Type1과 Type2가 있을 때, List<Type1>은 List<Type2>의 하위 타입도 아니고, 상위 타입도 아니다.
+    - 서로 다른 타입 Type1과 Type2가 있을 때, ```List<Type1>```은 ```List<Type2>```의 하위 타입도 아니고, 상위 타입도 아니다.
 
 ```java
 // 컴파일 시 예외
