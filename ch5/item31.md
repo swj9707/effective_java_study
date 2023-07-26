@@ -1,8 +1,8 @@
 # Item 31
 ## 한정적 와일드카드를 사용해 API 유연성을 높여라
 
-- 매개변수화 타입은 불공변 이다 (서로 다른 타입 Type1, Type2가 있을 때 List<Type1>은 List<Type2>의 하위 타입도 상위 타입도 아니다)
-  - 예를들어 List<String>은 List<Object>의 하위타입이 아니라는 뜻
+- 매개변수화 타입은 불공변 이다 (서로 다른 타입 Type1, Type2가 있을 때 ```List<Type1>```은 ```List<Type2>```의 하위 타입도 상위 타입도 아니다)
+  - 예를들어 ```List<String>```은 ```List<Object>```의 하위타입이 아니라는 뜻
   - 하지만 때론 불공변 방식보다 유연한 무언가가 필요! (특히나 API를 설계할 때는 유연한 API가 필요할 때가 있다)
  
 
@@ -44,7 +44,7 @@ public class Stack<E> {
     }
 }
 ```
-- 위의 코드에서 Iterable<? extends E> 의 의미는 pushAll()의 입력 매개변수 타입은 E의 Iterable이 아니라 E의 하위 타입의 Iterable 이라는 뜻!
+- 위의 코드에서 ```Iterable<? extends E>``` 의 의미는 pushAll()의 입력 매개변수 타입은 E의 Iterable이 아니라 E의 하위 타입의 Iterable 이라는 뜻!
 
 이번에는 정반대의 상황을 살펴보자!
 
@@ -84,7 +84,7 @@ public void popAll(Collection<? super E> dst) {
     list.clear();
 }
 ```
-- 위의 코드에서 Iterable<? super E> 의 의미는 popAll()의 입력 매개변수 타입은 E의 Collection이 아니라 E의 상위 타입의 Collection 이라는 뜻!
+- 위의 코드에서 ```Iterable<? super E>``` 의 의미는 popAll()의 입력 매개변수 타입은 E의 Collection이 아니라 E의 상위 타입의 Collection 이라는 뜻!
 
 ### PECS 공식!
 
