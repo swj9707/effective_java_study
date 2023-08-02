@@ -24,7 +24,7 @@ public class Text {
 }
 ```
 - 아래와 같은 식으로 비트별 OR을 사용해 여러 상수를 하나의 집합으로 모은다.
-- 이렇게 만들어진 집합을 비틑 필드라 한다.
+- 이렇게 만들어진 집합을 비트 필드라 한다.
 ```java
 public class Item36 {
     public static void main(String[] args) {
