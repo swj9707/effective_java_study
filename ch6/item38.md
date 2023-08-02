@@ -48,11 +48,15 @@ public enum BasicOperation implements Operation {
   ...
 }
 
+
 // 위의 코드에서 *를 추가하고 싶다면?
-  TIMES("*) {
+public enum ExtendedOperation implements Operation {
+   TIMES("*) {
     @Override
     public double apply(double x, double y) { return x * y }
   }
+  ...
+}
 // 우리가 할 일은 Operation 인터페이스를 구현한 열거 타입을 작성하는 것 뿐
 
 
