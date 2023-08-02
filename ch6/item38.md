@@ -51,7 +51,7 @@ public enum BasicOperation implements Operation {
 
 // 위의 코드에서 *를 추가하고 싶다면?
 public enum ExtendedOperation implements Operation {
-   TIMES("*) {
+   TIMES("*") {
     @Override
     public double apply(double x, double y) { return x * y }
   }
