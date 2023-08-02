@@ -10,7 +10,7 @@
 public interface Serializable {
 }
 ```
--  Serializable은 자신을 구현한 클래스의 인스턴스는 ObjectOutputStream을 통해 쓸(write)수 있다고(직렬화할 수 있다고) 알려준다.
+-  Serializable은 자신을 구현한 클래스의 인스턴스는 ObjectOutputStream을 통해 쓸수 있다고(직렬화할 수 있다고) 알려준다.
 
 ## 마커 애너테이션 
 - 멤버변수 없이 단순히 대상에 마킹하는 어노테이션
