@@ -21,9 +21,9 @@
 
 ## 올바른 예시
 ```java
-	Map<String, Long> freq;
-	try (Stream<String> words = new Scanner(file).tokens()) {
-		freq = words.collect(groupingBy(String::toLowerCase, counting()));
+Map<String, Long> freq;
+try (Stream<String> words = new Scanner(file).tokens()) {
+freq = words.collect(groupingBy(String::toLowerCase, counting()));
     }
 ```
 - 수집기(collector)를 사용
