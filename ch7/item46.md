@@ -8,10 +8,10 @@
   
 ## 안좋은 예시
 ```java
-   Map<String, Long> freq = new HashMap<>();
-   try(Stream<String> words = new Scanner(file).tokens())
-           words.forEach(word -> {
-               freq.merge(word.toLowerCase(), 1L, Long::sum);
+Map<String, Long> freq = new HashMap<>();
+try(Stream<String> words = new Scanner(file).tokens())
+	words.forEach(word -> {
+	freq.merge(word.toLowerCase(), 1L, Long::sum);
            });
    }
 ```
