@@ -53,7 +53,7 @@ public static <E> Stream<E> streamOf(Iterable<E> iterable) {
 }
 ```
 
-## Iterato와 Stream 중 무엇을 반환할까?
+## Iterator와 Stream 중 무엇을 반환할까?
 - 공개 API를 작성할 때는 사용자 대부분이 한 방식만 사용할거라는 근거가 없다면 두 방식 모두 반환하도록 작성하자.
   - Collection 인터페이스는 Iterable의 하위타입이고 Stream 메서드도 제공한다. 그래서 원소 시퀀스를 반환하는 공개 API의 반환 타입에는 Collection이나 그 하위 타입을 쓰는게 최선이다.
   	- ex) Arrays 역시 Arrays.asList와 Stream.of 메서드 지원  
