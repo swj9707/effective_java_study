@@ -80,18 +80,6 @@ public LottoNumber toLottoNumber(int number) { }
 public Rank getRankBy(WinningLotto winningLotto) {}
 ```
 
-#### 참고하면 좋은 네이밍시 중요한 고려사항
-- 왜 존재해야 하는가
-- 무슨 작업을 하는가
-- 어떻게 사용하는가
-
-``` java
-public List<Rank> getRanksBy(WinningLotto winningLotto) {
-    // 왜 존재해야 하는가 - WinningLotto를 이용해서 로또의 등수를 얻기 위해
-    // 무슨 작업을 하는가 - WinningLotto와 비교하여 알맞은 등수를 가져온다.
-    // 어떻게 사용하는가 - WinningLotto를 매개변수로 받아서 여러개의 로또들의 등수를 계산한다. 
-}
-```
 <br></br>
 
 ## 편의 메서드를 너무 많이 만들지 말자
