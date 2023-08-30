@@ -29,5 +29,6 @@ public String statement2() {
 
 
 ```java
+핵심!
 그냥 StringBuilder 써라
 ```
