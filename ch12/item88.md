@@ -31,13 +31,12 @@
             throw new IllegalArgumentException(e);
         }
     }
-}
   ```
 
-```text
-# 실행 결과, end가 start 보다 과거다. 즉, Period의 불변식이 깨진다.
-Fri Jan 01 12:00:00 PST 1999 - Sun Jan 01 12:00:00 PST 1984
-```
+  ```text
+  # 실행 결과, end가 start 보다 과거다. 즉, Period의 불변식이 깨진다.
+  Fri Jan 01 12:00:00 PST 1999 - Sun Jan 01 12:00:00 PST 1984
+  ```
 
 ## 방어법
 ### 유효성 검사
