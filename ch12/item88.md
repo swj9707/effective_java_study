@@ -31,7 +31,9 @@
             throw new IllegalArgumentException(e);
         }
     }
+  
   ```
+
   ```java
   public final class Period {
     private final Date start;
@@ -54,7 +56,7 @@
     public Date start() { return new Date(start.getTime()); }
     public Date end() { return new Date(end.getTime()); }
     public String toString() { return start + "-" + end; }
-}
+  }
   ```
 
   ```text
